@@ -181,19 +181,19 @@ def optimize(w, b, X, Y, num_iterations, learning_rate, print_cost = False):
         
         
         # Cost and gradient calculation (≈ 1-4 lines of code)
-        ### START CODE HERE ### 
+        
         grads, cost =  propagate(w, b, X, Y)
-        ### END CODE HERE ###
+        
         
         # Retrieve derivatives from grads
         dw = grads["dw"]
         db = grads["db"]
         
         # update rule (≈ 2 lines of code)
-        ### START CODE HERE ###
+        
         w = w - learning_rate*dw
         b = b - learning_rate*db
-        ### END CODE HERE ###
+        
         
         # Record the costs
         if i % 100 == 0:
@@ -269,7 +269,7 @@ def model(X_train, Y_train, X_test, Y_test, num_iterations = 2000, learning_rate
     d -- dictionary containing information about the model.
     """
     
-    ### START CODE HERE ###
+    
     
     # initialize parameters with zeros (≈ 1 line of code)
     w = np.zeros([X_train.shape[0], 1])
@@ -286,7 +286,7 @@ def model(X_train, Y_train, X_test, Y_test, num_iterations = 2000, learning_rate
     Y_prediction_test = predict(w, b, X_test)
     Y_prediction_train =  predict(w, b, X_train)
 
-    ### END CODE HERE ###
+    
 
     # Print train/test Errors
     print("train accuracy: {} %".format(100 - np.mean(np.abs(Y_prediction_train - Y_train)) * 100))
